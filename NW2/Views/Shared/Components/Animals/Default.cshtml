@@ -1,0 +1,40 @@
+﻿@model IList<Animals>
+<!-- Animal Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 mb-5 align-items-end wow fadeInUp"
+             data-wow-delay="0.1s">
+            <div class="col-lg-6">
+                <p><span class="text-primary me-2">#</span>Our Animals</p>
+                <h1 class="display-5 mb-0">
+                    Let`s See Our <span class="text-primary">Zoofari</span> Awsome
+                    Animals
+                </h1>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <a class="btn btn-primary py-3 px-5" href="">Explore More Animals</a>
+            </div>
+        </div>
+        <div class="row g-4">
+            @foreach (var Animals in Model.OrderBy(a=>a.AnimalsID))
+            {
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="animal-item"
+                   href="@Animals.AnimalsIMG"
+                   data-lightbox="@Animals.AnimalsName">
+                        <div class="position-relative">
+                            <img class="img-fluid" style="height:480px;object-fit:cover" src="@Animals.AnimalsIMG"  alt="img"  />
+                            <div class="animal-text p-4">
+                                <p class="text-white small text-uppercase mb-0">@Animals.AnimalsName</p>
+                                <h5 class="text-white mb-0">@Animals.AnimalsRN</h5>
+                            </div>
+                        </div>
+                    </a>
+            </div>
+                
+            }
+
+        </div>
+    </div>
+</div>
+<!-- Animal End -->
